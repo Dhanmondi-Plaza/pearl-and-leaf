@@ -34,7 +34,7 @@
   .nav-logo{height:52px;width:auto;display:block}
   .nav-right{display:flex;align-items:center;gap:24px}
   .nav-links{display:flex;gap:20px}
-  .nav-links a{font-size:12px;font-weight:300;letter-spacing:.1em;color:var(--mid);text-decoration:none;transition:color .2s}
+  .nav-links a{font-size:13px;font-weight:300;letter-spacing:.08em;color:var(--mid);text-decoration:none;transition:color .2s}
   .nav-links a:hover{color:var(--forest)}
   .nav-badge{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);background:var(--forest-pale);border:1px solid var(--border);padding:5px 12px;border-radius:20px;white-space:nowrap}
 
@@ -48,7 +48,7 @@
   .hero-eyebrow::before{content:'';width:20px;height:1px;background:var(--gold)}
   h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5.5vw,62px);font-weight:600;line-height:1.05;color:var(--dark);letter-spacing:-.01em;margin-bottom:18px}
   h1 em{font-style:italic;color:var(--forest)}
-  .hero-desc{font-size:15px;font-weight:300;line-height:1.8;color:var(--mid);margin-bottom:28px}
+  .hero-desc{font-size:16px;font-weight:300;line-height:1.75;color:var(--mid);margin-bottom:28px}
   .hero-cta{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);background:var(--forest);padding:13px 28px;border-radius:2px;text-decoration:none;transition:background .2s}
   .hero-cta:hover{background:var(--forest-mid)}
   .hero-cta::after{content:'→'}
@@ -60,9 +60,9 @@
   .hcard-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
   .hcard-item{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--forest-border-light)}
   .hcard-item:last-of-type{border-bottom:none}
-  .hcard-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--dark)}
-  .hcard-sub{font-size:11px;font-weight:300;color:var(--light);margin-top:2px}
-  .hcard-price{font-size:13px;font-weight:300;color:var(--forest);white-space:nowrap;flex-shrink:0}
+  .hcard-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--dark)}
+  .hcard-sub{font-size:12px;font-weight:300;color:var(--light);margin-top:2px}
+  .hcard-price{font-size:14px;font-weight:400;color:var(--forest);white-space:nowrap;flex-shrink:0}
   .hcard-footer{font-size:10px;font-weight:300;color:var(--light);margin-top:16px;padding-top:14px;border-top:1px solid var(--forest-border-light);letter-spacing:.04em}
 
   /* MENU SECTION */
@@ -73,17 +73,20 @@
   h2 em{font-style:italic;color:var(--forest)}
 
   .menu-block{margin-bottom:44px}
-  .cat-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--forest);padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:2px;display:flex;justify-content:space-between;align-items:center}
-  .cat-note{font-size:10px;font-weight:300;color:var(--light);font-style:italic;letter-spacing:.04em}
+  .cat-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest);padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:2px;display:flex;justify-content:space-between;align-items:center}
+  .cat-note{font-size:11px;font-weight:300;color:var(--light);font-style:italic;letter-spacing:.03em}
   .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px}
-  .dish{background:var(--warm);padding:18px 20px;transition:background .15s}
+  .dish{background:var(--warm);transition:background .15s;overflow:hidden}
   .dish:hover{background:var(--forest-pale)}
-  .dish-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:5px}
-  .dish-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--dark)}
-  .dish-price{font-size:12px;font-weight:300;color:var(--forest);white-space:nowrap;flex-shrink:0}
-  .dish-desc{font-size:12px;font-weight:300;color:var(--mid);line-height:1.6}
-  .dish-tags{display:flex;gap:4px;margin-top:7px;flex-wrap:wrap}
-  .dtag{font-size:9px;letter-spacing:.07em;text-transform:uppercase;background:var(--forest-pale);color:var(--forest);border:1px solid var(--border);padding:2px 7px;border-radius:10px}
+  .dish-img{width:100%;height:140px;object-fit:cover;display:block;background:var(--forest-pale)}
+  .dish-img-placeholder{width:100%;height:140px;background:linear-gradient(135deg,var(--forest-pale) 0%,rgba(45,90,39,0.08) 100%);display:flex;align-items:center;justify-content:center}
+  .dish-body{padding:16px 18px}
+  .dish-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:6px}
+  .dish-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--dark);line-height:1.2}
+  .dish-price{font-size:14px;font-weight:400;color:var(--forest);white-space:nowrap;flex-shrink:0}
+  .dish-desc{font-size:13px;font-weight:300;color:var(--mid);line-height:1.65}
+  .dish-tags{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
+  .dtag{font-size:10px;letter-spacing:.05em;text-transform:uppercase;background:var(--forest-pale);color:var(--forest);border:1px solid var(--border);padding:3px 8px;border-radius:10px}
 
   /* CUSTOMIZE */
   .customize{background:var(--warm);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:52px 0}
@@ -135,13 +138,23 @@
   .fade-up:nth-child(1){animation-delay:.05s}.fade-up:nth-child(2){animation-delay:.15s}.fade-up:nth-child(3){animation-delay:.25s}
 
   @media(max-width:700px){
-    .container{padding:0 24px}
-    .hero,.info{grid-template-columns:1fr;gap:40px;padding:56px 0 48px}
-    .menu-grid{grid-template-columns:1fr}
+    .container{padding:0 20px}
+    .hero,.info{grid-template-columns:1fr;gap:40px;padding:48px 0 40px}
+    .menu-grid{grid-template-columns:1fr 1fr}
+    .dish-img,.dish-img-placeholder{height:110px}
+    .dish-body{padding:12px 14px}
+    .dish-name{font-size:16px}
+    .dish-desc{font-size:12px}
     .cust-inner{grid-template-columns:1fr}
     .cust-opts{grid-template-columns:1fr 1fr}
     .nav-links{display:none}
     footer .footer-inner{flex-direction:column;align-items:flex-start}
+    h1{font-size:clamp(36px,10vw,52px)}
+    .cat-label{font-size:10px}
+  }
+  @media(max-width:420px){
+    .menu-grid{grid-template-columns:1fr}
+    .dish-img,.dish-img-placeholder{height:160px}
   }
 </style>
 </head>
@@ -173,28 +186,28 @@
       <p class="hero-note">No seating · Grab &amp; go window · Pre-order coming at launch</p>
     </div>
     <div class="hero-card fade-up">
-      <div class="hcard-label">Signature drinks · Preview</div>
+      <div class="hcard-label">Signature drinks</div>
       <div class="hcard-item">
         <div><div class="hcard-name">Brown Sugar Milk Tea</div><div class="hcard-sub">Tiger stripes, fresh tapioca</div></div>
+        <div class="hcard-price">$5.75</div>
+      </div>
+      <div class="hcard-item">
+        <div><div class="hcard-name">Taro Milk Tea</div><div class="hcard-sub">Creamy, earthy, purple</div></div>
+        <div class="hcard-price">$5.75</div>
+      </div>
+      <div class="hcard-item">
+        <div><div class="hcard-name">Matcha Milk Tea</div><div class="hcard-sub">Ceremonial grade, lightly sweet</div></div>
+        <div class="hcard-price">$6.25</div>
+      </div>
+      <div class="hcard-item">
+        <div><div class="hcard-name">Mango Sago</div><div class="hcard-sub">Coconut cream, fresh mango, sago pearls</div></div>
         <div class="hcard-price">$6.50</div>
       </div>
       <div class="hcard-item">
-        <div><div class="hcard-name">Taro Latte</div><div class="hcard-sub">Creamy, earthy, house blend</div></div>
-        <div class="hcard-price">$6.00</div>
+        <div><div class="hcard-name">Chicken Momos</div><div class="hcard-sub">Steamed, from Desi Dragon kitchen</div></div>
+        <div class="hcard-price">$3.75</div>
       </div>
-      <div class="hcard-item">
-        <div><div class="hcard-name">Cheese Foam Oolong</div><div class="hcard-sub">Salted cream, drink through the foam</div></div>
-        <div class="hcard-price">$7.00</div>
-      </div>
-      <div class="hcard-item">
-        <div><div class="hcard-name">Matcha Latte</div><div class="hcard-sub">Ceremonial grade, oat or whole</div></div>
-        <div class="hcard-price">$6.00</div>
-      </div>
-      <div class="hcard-item">
-        <div><div class="hcard-name">Cold Brew</div><div class="hcard-sub">18-hour steep, black or with milk</div></div>
-        <div class="hcard-price">$5.00</div>
-      </div>
-      <p class="hcard-footer">Full menu confirmed at opening · All drinks fully customizable</p>
+      <p class="hcard-footer">Coffee &amp; espresso available daily until noon</p>
     </div>
   </section>
 
@@ -206,92 +219,64 @@
     </div>
 
     <div class="menu-block">
-      <div class="cat-label"><span>Bubble tea</span><span class="cat-note">Classic &amp; specialty</span></div>
+      <div class="cat-label"><span>Milk Tea</span><span class="cat-note">Fully customizable</span></div>
       <div class="menu-grid">
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Classic Milk Tea</div><div class="dish-price">$5.50</div></div>
-          <div class="dish-desc">Black tea, whole milk, house syrup, tapioca pearls</div>
-          <div class="dish-tags"><span class="dtag">Classic</span></div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Brown Sugar Milk Tea</div><div class="dish-price">$6.50</div></div>
-          <div class="dish-desc">Tiger stripe caramel, fresh tapioca, steamed milk</div>
-          <div class="dish-tags"><span class="dtag">Bestseller</span></div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Taro Milk Tea</div><div class="dish-price">$6.00</div></div>
-          <div class="dish-desc">Fresh taro, creamy base, choice of pearls or jelly</div>
-          <div class="dish-tags"><span class="dtag">Popular</span></div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Cheese Foam Oolong</div><div class="dish-price">$7.00</div></div>
-          <div class="dish-desc">Salted cream foam over cold oolong — drink through the foam</div>
-          <div class="dish-tags"><span class="dtag">Specialty</span></div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Mango Fruit Tea</div><div class="dish-price">$5.50</div></div>
-          <div class="dish-desc">Jasmine green tea, fresh mango, aloe jelly</div>
-          <div class="dish-tags"><span class="dtag">Fruit tea</span></div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Lychee Rose Tea</div><div class="dish-price">$6.00</div></div>
-          <div class="dish-desc">White tea, lychee, rose, crystal boba</div>
-          <div class="dish-tags"><span class="dtag">Floral</span></div>
-        </div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=400&q=75&fit=crop" alt="Classic Milk Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Classic Milk Tea</div><div class="dish-price">$5.25</div></div><div class="dish-desc">Black tea shaken with whole milk and cane sugar. Clean, balanced, no-frills.</div><div class="dish-tags"><span class="dtag">Classic</span></div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1627391554840-a8cddb8a0912?w=400&q=75&fit=crop" alt="Brown Sugar Milk Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Brown Sugar Milk Tea</div><div class="dish-price">$5.75</div></div><div class="dish-desc">Brown sugar syrup with tiger-stripe effect, cold brewed black tea, fresh milk. Pearls included.</div><div class="dish-tags"><span class="dtag">Bestseller</span></div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1640505611044-b283e4dc98ed?w=400&q=75&fit=crop" alt="Taro Milk Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Taro Milk Tea</div><div class="dish-price">$5.75</div></div><div class="dish-desc">Creamy, subtly sweet taro blended with milk tea. Purple, smooth, earthy.</div><div class="dish-tags"><span class="dtag">Popular</span></div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=75&fit=crop" alt="Thai Milk Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Thai Milk Tea</div><div class="dish-price">$5.75</div></div><div class="dish-desc">Bold Thai-style orange tea with condensed and evaporated milk. Sweet, rich, slightly spiced.</div><div class="dish-tags"><span class="dtag">Popular</span></div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=400&q=75&fit=crop" alt="Matcha Milk Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Matcha Milk Tea</div><div class="dish-price">$6.25</div></div><div class="dish-desc">Ceremonial-grade matcha whisked into fresh cold milk. Earthy, lightly sweet.</div><div class="dish-tags"><span class="dtag">Premium</span></div></div></div>
       </div>
     </div>
 
     <div class="menu-block">
-      <div class="cat-label"><span>Coffee &amp; matcha</span><span class="cat-note">Hot or iced</span></div>
+      <div class="cat-label"><span>Fruit Tea</span><span class="cat-note">No dairy · Light &amp; refreshing</span></div>
       <div class="menu-grid">
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Matcha Latte</div><div class="dish-price">$6.00</div></div>
-          <div class="dish-desc">Ceremonial grade, oat or whole milk, lightly sweetened</div>
-          <div class="dish-tags"><span class="dtag">Popular</span></div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Cold Brew</div><div class="dish-price">$5.00</div></div>
-          <div class="dish-desc">18-hour steep, smooth and low-acid, black or with milk</div>
-          <div class="dish-tags"><span class="dtag">Coffee</span></div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Brown Sugar Espresso</div><div class="dish-price">$6.00</div></div>
-          <div class="dish-desc">Double shot, brown sugar syrup, oat milk over ice</div>
-          <div class="dish-tags"><span class="dtag">Coffee</span></div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Hojicha Latte</div><div class="dish-price">$5.50</div></div>
-          <div class="dish-desc">Roasted Japanese green tea, nutty, low-caffeine</div>
-          <div class="dish-tags"><span class="dtag">Low caffeine</span></div>
-        </div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=75&fit=crop" alt="Mango Green Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Mango Green Tea</div><div class="dish-price">$5.75</div></div><div class="dish-desc">Bright tropical mango steeped into jasmine green tea. Light, no dairy.</div><div class="dish-tags"><span class="dtag">No dairy</span></div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=75&fit=crop" alt="Lychee Green Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Lychee Green Tea</div><div class="dish-price">$5.50</div></div><div class="dish-desc">Delicate lychee with floral green tea. Light, aromatic, not overly sweet.</div><div class="dish-tags"><span class="dtag">No dairy</span></div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=75&fit=crop" alt="Peach Green Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Peach Green Tea</div><div class="dish-price">$5.50</div></div><div class="dish-desc">Ripe peach sweetness over a clean green tea base. Great any time of day.</div><div class="dish-tags"><span class="dtag">No dairy</span></div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1497534446932-c925b458314e?w=400&q=75&fit=crop" alt="Strawberry Green Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Strawberry Green Tea</div><div class="dish-price">$5.75</div></div><div class="dish-desc">Fresh strawberry flavor over green tea. Slightly tart, vibrant color.</div><div class="dish-tags"><span class="dtag">No dairy</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="menu-block">
+      <div class="cat-label"><span>Coffee &amp; Espresso</span><span class="cat-note">Available daily until noon</span></div>
+      <div class="menu-grid">
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=75&fit=crop" alt="Drip Coffee" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Drip Coffee</div><div class="dish-price">—</div></div><div class="dish-desc">House blend, black or with milk. Hot or iced.</div><div class="dish-tags"><span class="dtag">AM only</span></div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=75&fit=crop" alt="Latte" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Latte</div><div class="dish-price">—</div></div><div class="dish-desc">Double shot espresso with steamed milk. Hot or iced, oat or whole.</div><div class="dish-tags"><span class="dtag">AM only</span></div></div></div>
+      </div>
+      <p style="font-size:11px;font-weight:300;color:var(--light);margin-top:10px;font-style:italic;letter-spacing:.03em;">Coffee pricing confirmed at opening. Available every day 7 AM – 12 PM only.</p>
+    </div>
+
+    <div class="menu-block">
+      <div class="cat-label"><span>Toppings</span><span class="cat-note">Add to any drink</span></div>
+      <div class="menu-grid">
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=400&q=75&fit=crop" alt="Tapioca Pearls" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Tapioca Pearls</div><div class="dish-price">$0.75</div></div><div class="dish-desc">Classic black boba cooked in brown sugar syrup. Chewy, sweet.</div><div class="dish-tags"><span class="dtag">Classic</span></div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=75&fit=crop" alt="Lychee Jelly" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Lychee Jelly</div><div class="dish-price">$0.75</div></div><div class="dish-desc">Soft translucent jelly cubes with subtle lychee flavor.</div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=400&q=75&fit=crop" alt="Grass Jelly" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Grass Jelly</div><div class="dish-price">$0.75</div></div><div class="dish-desc">Herbal, slightly bitter black jelly. Classic pairing with milk teas.</div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&q=75&fit=crop" alt="Pudding" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Pudding</div><div class="dish-price">$0.75</div></div><div class="dish-desc">Silky egg pudding, smooth and lightly sweet.</div></div></div>
       </div>
     </div>
 
     <div class="menu-block">
       <div class="cat-label"><span>Snacks</span><span class="cat-note">Grab &amp; go</span></div>
       <div class="menu-grid">
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Mochi Waffle</div><div class="dish-price">$4.50</div></div>
-          <div class="dish-desc">Crispy outside, chewy inside — plain or sesame</div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Egg Puff</div><div class="dish-price">$4.00</div></div>
-          <div class="dish-desc">Hong Kong bubble waffle — classic or matcha</div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Samosa</div><div class="dish-price">$2.50</div></div>
-          <div class="dish-desc">Made fresh in the Desi Dragon kitchen daily</div>
-          <div class="dish-tags"><span class="dtag">From DD kitchen</span></div>
-        </div>
-        <div class="dish">
-          <div class="dish-top"><div class="dish-name">Sesame Ball</div><div class="dish-price">$3.00</div></div>
-          <div class="dish-desc">Lotus paste, crispy sesame crust, two per order</div>
-        </div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=75&fit=crop" alt="Chicken Bites" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Chicken Bites</div><div class="dish-price">$7.25</div></div><div class="dish-desc">Crispy fried chicken pieces, well seasoned. Hot, satisfying, pairs well with any drink.</div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1518013431117-eb1465fa5752?w=400&q=75&fit=crop" alt="Fries" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Fries</div><div class="dish-price">$4.25</div></div><div class="dish-desc">Classic salted fries. Simple, reliable.</div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&q=75&fit=crop" alt="Chicken Momos" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Chicken Momos</div><div class="dish-price">$3.75</div></div><div class="dish-desc">Steamed Nepali-style dumplings with spiced chicken. Served with chili sauce.</div><div class="dish-tags"><span class="dtag">From DD kitchen</span></div></div></div>
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&q=75&fit=crop" alt="Veggie Momos" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Veggie Momos</div><div class="dish-price">$4.25</div></div><div class="dish-desc">Steamed dumplings with spiced vegetable filling. Served with chili sauce.</div><div class="dish-tags"><span class="dtag">Vegetarian</span><span class="dtag">From DD kitchen</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="menu-block">
+      <div class="cat-label"><span>Dessert</span><span class="cat-note">Served cold</span></div>
+      <div class="menu-grid">
+        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1568909344668-6f14a07b56a0?w=400&q=75&fit=crop" alt="Mango Sago" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Mango Sago</div><div class="dish-price">$6.50</div></div><div class="dish-desc">Fresh mango chunks and sago pearls in chilled coconut cream. Sweet, tropical, indulgent.</div><div class="dish-tags"><span class="dtag">No dairy</span><span class="dtag">Seasonal</span></div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- CUSTOMIZE -->
+  <!-- CUSTOMIZE -->  <!-- CUSTOMIZE -->
   <section class="customize">
     <div class="cust-inner">
       <div>
@@ -332,8 +317,8 @@
   <section class="info" id="info">
     <div class="info-block">
       <h3>Hours &amp; location</h3>
-      <div class="info-row"><span class="info-lbl">Monday – Friday</span><span class="info-val">10:00 AM – 10:00 PM</span></div>
-      <div class="info-row"><span class="info-lbl">Saturday &amp; Sunday</span><span class="info-val">10:00 AM – 10:00 PM</span></div>
+      <div class="info-row"><span class="info-lbl">Every day</span><span class="info-val">7:00 AM – 10:00 PM</span></div>
+      <div class="info-row"><span class="info-lbl">Coffee &amp; espresso</span><span class="info-val">Available until noon only</span></div>
       <div class="info-row"><span class="info-lbl">Location</span><span class="info-val">Ground floor · DM Plaza</span></div>
       <div class="info-row"><span class="info-lbl">Address</span><span class="info-val">167-14 Hillside Ave<br>Jamaica, Queens 11432</span></div>
       <div class="info-row">
@@ -369,14 +354,14 @@
       <div class="footer-links">
         <a href="#menu">Menu</a>
         <a href="#info">Hours</a>
-        <a href="mailto:info@dhanmondiplaza.com">Contact</a>
+        <a href="/cdn-cgi/l/email-protection#8ee7e0e8e1ceeae6efe0e3e1e0eae7fee2eff4efa0ede1e3">Contact</a>
       </div>
       <div class="footer-copy">© 2026 Pearl &amp; Leaf · DM Plaza · Jamaica, Queens</div>
     </div>
   </footer>
 
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function handleNotify() {
     const el = document.getElementById('pl-email');
     if (!el.value || !el.value.includes('@')) {
@@ -384,9 +369,3 @@
       setTimeout(() => el.style.outline = '', 1500);
       return;
     }
-    document.querySelector('.nform').style.display = 'none';
-    document.getElementById('pl-success').classList.add('show');
-  }
-</script>
-</body>
-</html>
