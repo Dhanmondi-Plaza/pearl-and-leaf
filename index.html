@@ -1,381 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MJ1SE2ZFFW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MJ1SE2ZFFW');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pearl & Leaf — Bubble Tea | Jamaica, Queens</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{
-    --forest:#2d5a27;
-    --forest-mid:#3d7a35;
-    --forest-light:#5a9e50;
-    --forest-pale:#eef5ec;
-    --forest-border:rgba(45,90,39,0.15);
-    --forest-border-light:rgba(45,90,39,0.08);
-    --gold:#c9a050;
-    --gold-light:#e8d5a3;
-    --cream:#faf8f3;
-    --warm:#f5f0e6;
-    --dark:#1a2118;
-    --mid:#5a6355;
-    --light:#8a9485;
-    --border:rgba(45,90,39,0.15);
-  }
-  html{scroll-behavior:smooth}
-  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);min-height:100vh;overflow-x:hidden}
-  body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 0%,rgba(45,90,39,0.04) 0%,transparent 60%),radial-gradient(ellipse at 85% 90%,rgba(201,160,80,0.03) 0%,transparent 50%);pointer-events:none;z-index:0}
-  .container{max-width:880px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
-
-  /* NAV */
-  nav{padding:20px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--forest-border-light)}
-  .nav-logo-frame{display:block;position:relative;width:105px;height:73px;overflow:hidden}
-  .nav-logo{position:absolute;display:block;width:200px;height:auto;left:-48px;top:-27px}
-  .nav-right{display:flex;align-items:center;gap:24px}
-  .nav-links{display:flex;gap:20px}
-  .nav-links a{font-size:13px;font-weight:300;letter-spacing:.08em;color:var(--mid);text-decoration:none;transition:color .2s}
-  .nav-links a:hover{color:var(--forest)}
-  .nav-badge{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);background:var(--forest-pale);border:1px solid var(--border);padding:5px 12px;border-radius:20px;white-space:nowrap}
-
-  /* OPENING BAR */
-  .opening-bar{background:var(--forest);padding:11px;text-align:center}
-  .opening-bar p{font-size:11px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,248,243,.8)}
-
-  /* HERO */
-  .hero{padding:72px 0 64px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;border-bottom:1px solid var(--border)}
-  .hero-eyebrow{font-size:10px;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
-  .hero-eyebrow::before{content:'';width:20px;height:1px;background:var(--gold)}
-  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5.5vw,62px);font-weight:600;line-height:1.05;color:var(--dark);letter-spacing:-.01em;margin-bottom:18px}
-  h1 em{font-style:italic;color:var(--forest)}
-  .hero-desc{font-size:16px;font-weight:300;line-height:1.75;color:var(--mid);margin-bottom:28px}
-  .hero-cta{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);background:var(--forest);padding:13px 28px;border-radius:2px;text-decoration:none;transition:background .2s}
-  .hero-cta:hover{background:var(--forest-mid)}
-  .hero-cta::after{content:'→'}
-  .hero-note{font-size:11px;font-weight:300;color:var(--light);margin-top:10px}
-
-  /* Hero menu card */
-  .hero-card{background:var(--warm);border:1px solid var(--border);padding:36px 32px;position:relative}
-  .hero-card::after{content:'';position:absolute;top:6px;left:6px;right:-6px;bottom:-6px;border:1px solid var(--forest-border-light);z-index:-1}
-  .hcard-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
-  .hcard-item{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--forest-border-light)}
-  .hcard-item:last-of-type{border-bottom:none}
-  .hcard-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--dark)}
-  .hcard-sub{font-size:12px;font-weight:300;color:var(--light);margin-top:2px}
-  .hcard-price{font-size:14px;font-weight:400;color:var(--forest);white-space:nowrap;flex-shrink:0}
-  .hcard-footer{font-size:10px;font-weight:300;color:var(--light);margin-top:16px;padding-top:14px;border-top:1px solid var(--forest-border-light);letter-spacing:.04em}
-
-  /* MENU SECTION */
-  .menu{padding:80px 0}
-  .section-head{margin-bottom:44px}
-  .section-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-  h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,42px);font-weight:600;color:var(--dark);line-height:1.1}
-  h2 em{font-style:italic;color:var(--forest)}
-
-  .menu-block{margin-bottom:44px}
-  .cat-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest);padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:2px;display:flex;justify-content:space-between;align-items:center}
-  .cat-note{font-size:11px;font-weight:300;color:var(--light);font-style:italic;letter-spacing:.03em}
-  .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px}
-  .dish{background:var(--warm);transition:background .15s;overflow:hidden}
-  .dish:hover{background:var(--forest-pale)}
-  .dish-img{width:100%;height:140px;object-fit:cover;display:block;background:var(--forest-pale)}
-  .dish-img-placeholder{width:100%;height:140px;background:linear-gradient(135deg,var(--forest-pale) 0%,rgba(45,90,39,0.08) 100%);display:flex;align-items:center;justify-content:center}
-  .dish-body{padding:16px 18px}
-  .dish-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:6px}
-  .dish-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--dark);line-height:1.2}
-  .dish-price{font-size:14px;font-weight:400;color:var(--forest);white-space:nowrap;flex-shrink:0}
-  .dish-desc{font-size:13px;font-weight:300;color:var(--mid);line-height:1.65}
-  .dish-tags{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
-  .dtag{font-size:10px;letter-spacing:.05em;text-transform:uppercase;background:var(--forest-pale);color:var(--forest);border:1px solid var(--border);padding:3px 8px;border-radius:10px}
-
-  /* CUSTOMIZE */
-  .customize{background:var(--warm);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:52px 0}
-  .cust-inner{display:grid;grid-template-columns:220px 1fr;gap:52px;align-items:start}
-  .cust-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--dark);margin-bottom:10px}
-  .cust-title em{font-style:italic;color:var(--forest)}
-  .cust-desc{font-size:13px;font-weight:300;color:var(--mid);line-height:1.7}
-  .cust-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-  .opt{background:var(--cream);padding:16px 18px}
-  .opt-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-  .opt-item{font-size:12px;font-weight:300;color:var(--mid);padding:4px 0;border-bottom:1px solid var(--forest-border-light);display:flex;align-items:center;gap:7px}
-  .opt-item:last-child{border-bottom:none}
-  .opt-item::before{content:'';width:3px;height:3px;background:var(--forest-light);border-radius:50%;flex-shrink:0}
-
-  /* INFO + NOTIFY */
-  .info{padding:80px 0;display:grid;grid-template-columns:1fr 1fr;gap:64px;border-top:1px solid var(--border)}
-  .info-block h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--dark);margin-bottom:22px}
-  .info-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--forest-border-light);font-size:13px}
-  .info-row:last-of-type{border-bottom:none}
-  .info-lbl{font-weight:300;color:var(--mid)}
-  .info-val{font-weight:400;color:var(--dark);text-align:right}
-  .transit-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;font-size:10px;font-weight:700;color:white}
-  .f-train{background:#FF6319}
-  .bus-badge{background:#EE352E;color:white;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px}
-  .info-note{font-size:11px;font-weight:300;color:var(--light);margin-top:14px;line-height:1.65}
-
-  .notify-block h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--dark);margin-bottom:8px}
-  .notify-block p{font-size:13px;font-weight:300;color:var(--mid);line-height:1.75;margin-bottom:20px}
-  .nform{display:flex;border:1px solid var(--border);border-radius:2px;overflow:hidden;background:white}
-  .nform input{flex:1;border:none;outline:none;padding:12px 14px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--dark);background:transparent}
-  .nform input::placeholder{color:var(--light)}
-  .nform button{background:var(--forest);color:white;border:none;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:12px 16px;cursor:pointer;transition:background .2s;white-space:nowrap}
-  .nform button:hover{background:var(--forest-mid)}
-  .nsuccess{display:none;font-size:13px;color:var(--forest);margin-top:10px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px}
-  .nsuccess.show{display:block}
-
-  /* FOOTER */
-  footer{border-top:1px solid var(--border);padding:28px 0}
-  .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-  .footer-logo-frame{display:block;position:relative;width:78px;height:55px;overflow:hidden}
-  .footer-logo{position:absolute;display:block;width:150px;height:auto;left:-36px;top:-20px}
-  .footer-links{display:flex;gap:18px}
-  .footer-links a{font-size:11px;font-weight:300;color:var(--mid);text-decoration:none;letter-spacing:.06em}
-  .footer-links a:hover{color:var(--forest)}
-  .footer-copy{font-size:11px;color:var(--light);font-weight:300}
-
-  /* ANIM */
-  @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-  .fade-up{opacity:0;animation:fadeUp .7s ease forwards}
-  .fade-up:nth-child(1){animation-delay:.05s}.fade-up:nth-child(2){animation-delay:.15s}.fade-up:nth-child(3){animation-delay:.25s}
-
-  @media(max-width:700px){
-    .container{padding:0 20px}
-    .hero,.info{grid-template-columns:1fr;gap:40px;padding:48px 0 40px}
-    .menu-grid{grid-template-columns:1fr 1fr}
-    .dish-img,.dish-img-placeholder{height:110px}
-    .dish-body{padding:12px 14px}
-    .dish-name{font-size:16px}
-    .dish-desc{font-size:12px}
-    .cust-inner{grid-template-columns:1fr}
-    .cust-opts{grid-template-columns:1fr 1fr}
-    .nav-links{display:none}
-    footer .footer-inner{flex-direction:column;align-items:flex-start}
-    h1{font-size:clamp(36px,10vw,52px)}
-    .cat-label{font-size:10px}
-  }
-  @media(max-width:420px){
-    .menu-grid{grid-template-columns:1fr}
-    .dish-img,.dish-img-placeholder{height:160px}
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#193728">
+  <meta name="description" content="Pearl & Leaf is a tea and café experience taking shape at DM Plaza in Jamaica, Queens. Explore the plans and follow its progress toward opening.">
+  <link rel="canonical" href="https://www.pearlandleafnyc.com/">
+  <link rel="icon" href="logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=Noto+Sans+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <title>Pearl & Leaf | Coming Soon at DM Plaza</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MJ1SE2ZFFW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MJ1SE2ZFFW');
+  </script>
+  <script src="site.js" defer></script>
 </head>
 <body>
-<div class="container">
-
-  <nav>
-    <a href="index.html"><span class="nav-logo-frame"><img src="logo.webp" alt="Pearl & Leaf" class="nav-logo"></span></a>
-    <div class="nav-right">
-      <div class="nav-links">
-        <a href="#menu">Menu</a>
-        <a href="#info">Hours</a>
-        <a href="#info">Find us</a>
-      </div>
-      <div class="nav-badge">Opening Soon</div>
-    </div>
-  </nav>
-
-  <div class="opening-bar">
-    <p>Opening Summer 2026 · Ground floor · DM Plaza · 167-14 Hillside Ave, Jamaica, Queens</p>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <div class="plaza-bar">
+    <a href="https://www.dhanmondiplaza.com/" aria-label="Visit DM Plaza">
+      <span class="plaza-logo-frame"><img src="dm-plaza-logo.webp" alt="" width="614" height="409"></span>
+      <span data-i18n="parent">Part of DM Plaza · More Together</span>
+    </a>
+    <a class="plaza-visit" href="https://www.dhanmondiplaza.com/" data-i18n="visit">Visit DM Plaza ↗</a>
   </div>
-
-  <section class="hero">
-    <div>
-      <div class="hero-eyebrow fade-up">Grab &amp; go · Ground floor · DM Plaza</div>
-      <h1 class="fade-up">Every sip,<br><em>made right.</em></h1>
-      <p class="hero-desc fade-up">Bubble tea, coffee, and snacks crafted with care — ready in minutes. Walk in, order at the window, go. Ground floor of DM Plaza at the heart of Hillside Avenue.</p>
-      <a href="#info" class="hero-cta fade-up">Get notified at opening</a>
-      <p class="hero-note">No seating · Grab &amp; go window · Pre-order coming at launch</p>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-logo" href="/" aria-label="Pearl & Leaf home">
+        <img src="logo.webp" alt="Pearl & Leaf" width="614" height="409">
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#vision" data-i18n="navVision">Our plans</a>
+        <a href="#progress" data-i18n="navProgress">Progress</a>
+        <a href="https://www.dhanmondiplaza.com/careers" data-i18n="navCareers">Careers</a>
+      </nav>
+      <label class="language">
+        <span class="sr-only" data-i18n="languageLabel">Language</span>
+        <select id="language" aria-label="Language">
+          <option value="en">English</option>
+          <option value="bn">বাংলা</option>
+          <option value="es">Español</option>
+          <option value="zh-CN">中文</option>
+        </select>
+      </label>
     </div>
-    <div class="hero-card fade-up">
-      <div class="hcard-label">Signature drinks</div>
-      <div class="hcard-item">
-        <div><div class="hcard-name">Brown Sugar Milk Tea</div><div class="hcard-sub">Tiger stripes, fresh tapioca</div></div>
-        <div class="hcard-price">$5.75</div>
-      </div>
-      <div class="hcard-item">
-        <div><div class="hcard-name">Taro Milk Tea</div><div class="hcard-sub">Creamy, earthy, purple</div></div>
-        <div class="hcard-price">$5.75</div>
-      </div>
-      <div class="hcard-item">
-        <div><div class="hcard-name">Matcha Milk Tea</div><div class="hcard-sub">Ceremonial grade, lightly sweet</div></div>
-        <div class="hcard-price">$6.25</div>
-      </div>
-      <div class="hcard-item">
-        <div><div class="hcard-name">Mango Sago</div><div class="hcard-sub">Coconut cream, fresh mango, sago pearls</div></div>
-        <div class="hcard-price">$6.50</div>
-      </div>
-      <div class="hcard-item">
-        <div><div class="hcard-name">Chicken Momos</div><div class="hcard-sub">Steamed, from Desi Dragon kitchen</div></div>
-        <div class="hcard-price">$3.75</div>
-      </div>
-      <p class="hcard-footer">Coffee &amp; espresso available daily until noon</p>
-    </div>
-  </section>
-
-  <!-- MENU -->
-  <section class="menu" id="menu">
-    <div class="section-head">
-      <div class="section-eyebrow">What we serve</div>
-      <h2>The menu.</h2>
-    </div>
-
-    <div class="menu-block">
-      <div class="cat-label"><span>Milk Tea</span><span class="cat-note">Fully customizable</span></div>
-      <div class="menu-grid">
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=400&q=75&fit=crop" alt="Classic Milk Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Classic Milk Tea</div><div class="dish-price">$5.25</div></div><div class="dish-desc">Black tea shaken with whole milk and cane sugar. Clean, balanced, no-frills.</div><div class="dish-tags"><span class="dtag">Classic</span></div></div></div>
-        <div class="dish"><img class="dish-img" src="milk-tea-concept.webp" alt="Illustrative iced milk tea with tapioca pearls" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Brown Sugar Milk Tea</div><div class="dish-price">$5.75</div></div><div class="dish-desc">Brown sugar syrup with tiger-stripe effect, cold brewed black tea, fresh milk. Pearls included.</div><div class="dish-tags"><span class="dtag">Bestseller</span></div></div></div>
-        <div class="dish"><img class="dish-img" src="cups-and-bags-concept.jpg" alt="Pearl & Leaf branded cups and bag concept" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Taro Milk Tea</div><div class="dish-price">$5.75</div></div><div class="dish-desc">Creamy, subtly sweet taro blended with milk tea. Purple, smooth, earthy.</div><div class="dish-tags"><span class="dtag">Popular</span></div></div></div>
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=75&fit=crop" alt="Thai Milk Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Thai Milk Tea</div><div class="dish-price">$5.75</div></div><div class="dish-desc">Bold Thai-style orange tea with condensed and evaporated milk. Sweet, rich, slightly spiced.</div><div class="dish-tags"><span class="dtag">Popular</span></div></div></div>
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=400&q=75&fit=crop" alt="Matcha Milk Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Matcha Milk Tea</div><div class="dish-price">$6.25</div></div><div class="dish-desc">Ceremonial-grade matcha whisked into fresh cold milk. Earthy, lightly sweet.</div><div class="dish-tags"><span class="dtag">Premium</span></div></div></div>
-      </div>
-    </div>
-
-    <div class="menu-block">
-      <div class="cat-label"><span>Fruit Tea</span><span class="cat-note">No dairy · Light &amp; refreshing</span></div>
-      <div class="menu-grid">
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=75&fit=crop" alt="Mango Green Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Mango Green Tea</div><div class="dish-price">$5.75</div></div><div class="dish-desc">Bright tropical mango steeped into jasmine green tea. Light, no dairy.</div><div class="dish-tags"><span class="dtag">No dairy</span></div></div></div>
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=75&fit=crop" alt="Lychee Green Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Lychee Green Tea</div><div class="dish-price">$5.50</div></div><div class="dish-desc">Delicate lychee with floral green tea. Light, aromatic, not overly sweet.</div><div class="dish-tags"><span class="dtag">No dairy</span></div></div></div>
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=75&fit=crop" alt="Peach Green Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Peach Green Tea</div><div class="dish-price">$5.50</div></div><div class="dish-desc">Ripe peach sweetness over a clean green tea base. Great any time of day.</div><div class="dish-tags"><span class="dtag">No dairy</span></div></div></div>
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1497534446932-c925b458314e?w=400&q=75&fit=crop" alt="Strawberry Green Tea" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Strawberry Green Tea</div><div class="dish-price">$5.75</div></div><div class="dish-desc">Fresh strawberry flavor over green tea. Slightly tart, vibrant color.</div><div class="dish-tags"><span class="dtag">No dairy</span></div></div></div>
-      </div>
-    </div>
-
-    <div class="menu-block">
-      <div class="cat-label"><span>Coffee &amp; Espresso</span><span class="cat-note">Available daily until noon</span></div>
-      <div class="menu-grid">
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=75&fit=crop" alt="Drip Coffee" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Drip Coffee</div><div class="dish-price">—</div></div><div class="dish-desc">House blend, black or with milk. Hot or iced.</div><div class="dish-tags"><span class="dtag">AM only</span></div></div></div>
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=75&fit=crop" alt="Latte" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Latte</div><div class="dish-price">—</div></div><div class="dish-desc">Double shot espresso with steamed milk. Hot or iced, oat or whole.</div><div class="dish-tags"><span class="dtag">AM only</span></div></div></div>
-      </div>
-      <p style="font-size:11px;font-weight:300;color:var(--light);margin-top:10px;font-style:italic;letter-spacing:.03em;">Coffee pricing confirmed at opening. Available every day 7 AM – 12 PM only.</p>
-    </div>
-
-    <div class="menu-block">
-      <div class="cat-label"><span>Toppings</span><span class="cat-note">Add to any drink</span></div>
-      <div class="menu-grid">
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=400&q=75&fit=crop" alt="Tapioca Pearls" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Tapioca Pearls</div><div class="dish-price">$0.75</div></div><div class="dish-desc">Classic black boba cooked in brown sugar syrup. Chewy, sweet.</div><div class="dish-tags"><span class="dtag">Classic</span></div></div></div>
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=75&fit=crop" alt="Lychee Jelly" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Lychee Jelly</div><div class="dish-price">$0.75</div></div><div class="dish-desc">Soft translucent jelly cubes with subtle lychee flavor.</div></div></div>
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1558857563-b371033873b8?w=400&q=75&fit=crop" alt="Grass Jelly" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Grass Jelly</div><div class="dish-price">$0.75</div></div><div class="dish-desc">Herbal, slightly bitter black jelly. Classic pairing with milk teas.</div></div></div>
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&q=75&fit=crop" alt="Pudding" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Pudding</div><div class="dish-price">$0.75</div></div><div class="dish-desc">Silky egg pudding, smooth and lightly sweet.</div></div></div>
-      </div>
-    </div>
-
-    <div class="menu-block">
-      <div class="cat-label"><span>Snacks</span><span class="cat-note">Grab &amp; go</span></div>
-      <div class="menu-grid">
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=75&fit=crop" alt="Chicken Bites" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Chicken Bites</div><div class="dish-price">$7.25</div></div><div class="dish-desc">Crispy fried chicken pieces, well seasoned. Hot, satisfying, pairs well with any drink.</div></div></div>
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1518013431117-eb1465fa5752?w=400&q=75&fit=crop" alt="Fries" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Fries</div><div class="dish-price">$4.25</div></div><div class="dish-desc">Classic salted fries. Simple, reliable.</div></div></div>
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&q=75&fit=crop" alt="Chicken Momos" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Chicken Momos</div><div class="dish-price">$3.75</div></div><div class="dish-desc">Steamed Nepali-style dumplings with spiced chicken. Served with chili sauce.</div><div class="dish-tags"><span class="dtag">From DD kitchen</span></div></div></div>
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&q=75&fit=crop" alt="Veggie Momos" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Veggie Momos</div><div class="dish-price">$4.25</div></div><div class="dish-desc">Steamed dumplings with spiced vegetable filling. Served with chili sauce.</div><div class="dish-tags"><span class="dtag">Vegetarian</span><span class="dtag">From DD kitchen</span></div></div></div>
-      </div>
-    </div>
-
-    <div class="menu-block">
-      <div class="cat-label"><span>Dessert</span><span class="cat-note">Served cold</span></div>
-      <div class="menu-grid">
-        <div class="dish"><img class="dish-img" src="https://images.unsplash.com/photo-1568909344668-6f14a07b56a0?w=400&q=75&fit=crop" alt="Mango Sago" loading="lazy"><div class="dish-body"><div class="dish-top"><div class="dish-name">Mango Sago</div><div class="dish-price">$6.50</div></div><div class="dish-desc">Fresh mango chunks and sago pearls in chilled coconut cream. Sweet, tropical, indulgent.</div><div class="dish-tags"><span class="dtag">No dairy</span><span class="dtag">Seasonal</span></div></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CUSTOMIZE -->  <!-- CUSTOMIZE -->
-  <section class="customize">
-    <div class="cust-inner">
-      <div>
-        <div class="section-eyebrow">Make it yours</div>
-        <div class="cust-title">Every drink,<br><em>your way.</em></div>
-        <p class="cust-desc" style="margin-top:12px;">Sweetness, ice, milk, toppings — fully adjustable on every drink.</p>
-      </div>
-      <div class="cust-opts">
-        <div class="opt">
-          <div class="opt-label">Sweetness</div>
-          <div class="opt-item">0% unsweetened</div>
-          <div class="opt-item">25% light</div>
-          <div class="opt-item">50% half sweet</div>
-          <div class="opt-item">75% less sweet</div>
-          <div class="opt-item">100% standard</div>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">A new tea and café experience · Jamaica, Queens</p>
+        <h1 id="hero-title" data-i18n-html="headline">A better drink.<br><em>A brighter pause.</em></h1>
+        <p class="intro" data-i18n="intro">Pearl & Leaf is taking shape at DM Plaza. We are developing drinks and treats inspired by the flavors and communities around us. The final menu, team, and opening date are still being confirmed.</p>
+        <div class="actions">
+          <a class="button primary" href="mailto:info@dhanmondiplaza.com?subject=Pearl%20%26%20Leaf%20opening%20updates" data-i18n="contact">Ask for opening updates ↗</a>
+          <a class="button secondary" href="#vision" data-i18n="explore">Explore our plans ↓</a>
         </div>
-        <div class="opt">
-          <div class="opt-label">Ice</div>
-          <div class="opt-item">No ice</div>
-          <div class="opt-item">Less ice</div>
-          <div class="opt-item">Regular ice</div>
-          <div class="opt-item">Extra ice</div>
+        <p class="hero-note" data-i18n="note">Coming soon at DM Plaza. No opening date or final menu has been announced.</p>
+      </div>
+      <figure class="hero-image">
+        <img src="milk-tea-concept.webp" alt="Illustrative iced tea drink with tapioca pearls" width="1200" height="800" fetchpriority="high">
+        <figcaption data-i18n="concept">Concept image — not a confirmed menu item or the finished café.</figcaption>
+      </figure>
+    </section>
+    <section class="section vision" id="vision" aria-labelledby="vision-title">
+      <div class="wrap section-grid">
+        <div>
+          <p class="eyebrow" data-i18n="planned">Planned experience</p>
+          <h2 id="vision-title" data-i18n="visionTitle">What we're exploring</h2>
+          <p class="section-lead" data-i18n="visionIntro">The first menu is still being developed. These are the kinds of drinks and treats we're working toward, not a list of products ready to order.</p>
         </div>
-        <div class="opt">
-          <div class="opt-label">Toppings</div>
-          <div class="opt-item">Tapioca pearls</div>
-          <div class="opt-item">Crystal boba</div>
-          <div class="opt-item">Aloe jelly</div>
-          <div class="opt-item">Lychee jelly</div>
-          <div class="opt-item">Cheese foam</div>
-          <div class="opt-item">Pudding</div>
+        <ul class="offer-list">
+          <li><span>01</span><strong data-i18n="offer1">Tea and bubble tea</strong></li>
+          <li><span>02</span><strong data-i18n="offer2">Coffee and seasonal drinks</strong></li>
+          <li><span>03</span><strong data-i18n="offer3">Desserts and light bites</strong></li>
+        </ul>
+      </div>
+    </section>
+    <section class="section progress" id="progress" aria-labelledby="progress-title">
+      <div class="wrap section-grid">
+        <div>
+          <p class="eyebrow" data-i18n="before">Before we open</p>
+          <h2 id="progress-title" data-i18n="progressTitle">Taking shape, one detail at a time.</h2>
+        </div>
+        <div class="progress-copy">
+          <p data-i18n="progressBody">We are developing recipes, the service flow, and the café space. We will share confirmed details and real buildout photos as they become available.</p>
+          <p class="muted" data-i18n="progressNote">The images here are concepts. The drinks, packaging, layout, hours, and opening date may change.</p>
+          <a class="text-link" href="https://www.dhanmondiplaza.com/careers" data-i18n="careersLink">Explore open roles at DM Plaza ↗</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- INFO + NOTIFY -->
-  <section class="info" id="info">
-    <div class="info-block">
-      <h3>Hours &amp; location</h3>
-      <div class="info-row"><span class="info-lbl">Every day</span><span class="info-val">7:00 AM – 10:00 PM</span></div>
-      <div class="info-row"><span class="info-lbl">Coffee &amp; espresso</span><span class="info-val">Available until noon only</span></div>
-      <div class="info-row"><span class="info-lbl">Location</span><span class="info-val">Ground floor · DM Plaza</span></div>
-      <div class="info-row"><span class="info-lbl">Address</span><span class="info-val">167-14 Hillside Ave<br>Jamaica, Queens 11432</span></div>
-      <div class="info-row">
-        <span class="info-lbl">Subway</span>
-        <span class="info-val" style="display:flex;align-items:center;gap:6px;justify-content:flex-end;">
-          <span class="transit-badge f-train">F</span>
-          <span>169 St · entrance on the block</span>
-        </span>
+    </section>
+    <section class="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-inner">
+        <div>
+          <p class="eyebrow" data-i18n="stayEyebrow">Stay in the loop</p>
+          <h2 id="contact-title" data-i18n="stayTitle">Curious about what's coming?</h2>
+          <p data-i18n="stayBody">Ask us for updates as Pearl & Leaf takes shape in Jamaica, Queens.</p>
+        </div>
+        <a class="button light" href="mailto:info@dhanmondiplaza.com?subject=Pearl%20%26%20Leaf%20opening%20updates" data-i18n="emailUs">Email us ↗</a>
       </div>
-      <div class="info-row">
-        <span class="info-lbl">Bus</span>
-        <span class="info-val" style="display:flex;gap:5px;align-items:center;justify-content:flex-end;flex-wrap:wrap;">
-          <span class="bus-badge">Q1</span><span class="bus-badge">Q36</span><span class="bus-badge">Q43</span><span class="bus-badge">Q82</span>
-        </span>
-      </div>
-      <p class="info-note">No seating — grab-and-go window. Pre-order coming at launch for zero-wait pickup.</p>
-    </div>
-    <div class="notify-block">
-      <h3>Get notified<br>when we open.</h3>
-      <p>Opening Summer 2026 on the ground floor of DM Plaza. Be the first to know — and get our launch menu before doors open.</p>
-      <div class="nform">
-        <input type="email" id="pl-email" placeholder="your@email.com">
-        <button onclick="handleNotify()">Notify me</button>
-      </div>
-      <div class="nsuccess" id="pl-success">You're on the list. See you at the window.</div>
-      <p style="font-size:11px;font-weight:300;color:var(--light);margin-top:10px;">No spam. Opening date and launch menu only.</p>
-    </div>
-  </section>
-
+    </section>
+  </main>
   <footer>
-    <div class="footer-inner">
-      <span class="footer-logo-frame"><img src="logo.webp" alt="Pearl & Leaf" class="footer-logo"></span>
-      <div class="footer-links">
-        <a href="#menu">Menu</a>
-        <a href="#info">Hours</a>
-        <a href="/cdn-cgi/l/email-protection#8ee7e0e8e1ceeae6efe0e3e1e0eae7fee2eff4efa0ede1e3">Contact</a>
+    <div class="wrap footer-inner">
+      <span>Pearl & Leaf</span>
+      <div>
+        <a href="https://www.dhanmondiplaza.com/" data-i18n="visitFooter">DM Plaza</a>
+        <a href="https://www.dhanmondiplaza.com/privacy" data-i18n="privacy">Privacy</a>
+        <a href="mailto:info@dhanmondiplaza.com?subject=Pearl%20%26%20Leaf%20inquiry" data-i18n="footerContact">Contact</a>
       </div>
-      <div class="footer-copy">© 2026 Pearl &amp; Leaf · DM Plaza · Jamaica, Queens</div>
+      <small>© 2026 Pearl & Leaf</small>
     </div>
   </footer>
-
-</div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  function handleNotify() {
-    const el = document.getElementById('pl-email');
-    if (!el.value || !el.value.includes('@')) {
-      el.style.outline = '2px solid #c9a050';
-      setTimeout(() => el.style.outline = '', 1500);
-      return;
-    }
+</body>
+</html>
