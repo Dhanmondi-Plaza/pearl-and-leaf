@@ -59,7 +59,7 @@
         <h1 id="hero-title" data-i18n-html="headline">A better drink.<br><em>A brighter pause.</em></h1>
         <p class="intro" data-i18n="intro">Pearl & Leaf is taking shape at DM Plaza. We are developing drinks and treats inspired by the flavors and communities around us. The final menu, team, and opening date are still being confirmed.</p>
         <div class="actions">
-          <a class="button primary" href="mailto:info@dhanmondiplaza.com?subject=Pearl%20%26%20Leaf%20opening%20updates" data-i18n="contact">Ask for opening updates ↗</a>
+          <a class="button primary" href="#updates" data-i18n="contact">Get opening updates ↓</a>
           <a class="button secondary" href="#vision" data-i18n="explore">Explore our plans ↓</a>
         </div>
         <p class="hero-note" data-i18n="note">Coming soon at DM Plaza. No opening date or final menu has been announced.</p>
@@ -96,14 +96,22 @@
         </div>
       </div>
     </section>
-    <section class="contact" aria-labelledby="contact-title">
+    <section class="contact" id="updates" aria-labelledby="contact-title">
       <div class="wrap contact-inner">
         <div>
           <p class="eyebrow" data-i18n="stayEyebrow">Stay in the loop</p>
           <h2 id="contact-title" data-i18n="stayTitle">Curious about what's coming?</h2>
-          <p data-i18n="stayBody">Ask us for updates as Pearl & Leaf takes shape in Jamaica, Queens.</p>
+          <p data-i18n="stayBody">Sign up for email updates as Pearl & Leaf takes shape in Jamaica, Queens.</p>
         </div>
-        <a class="button light" href="mailto:info@dhanmondiplaza.com?subject=Pearl%20%26%20Leaf%20opening%20updates" data-i18n="emailUs">Email us ↗</a>
+        <form class="notify-form" id="notify-form">
+          <label for="pl-email" data-i18n="emailLabel">Email address</label>
+          <div class="notify-fields">
+            <input id="pl-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+            <button class="button light" type="submit" data-i18n="emailUs">Notify me</button>
+          </div>
+          <p class="notify-consent" data-i18n="notifyConsent">By selecting Notify me, you agree to receive Pearl & Leaf opening emails. Unsubscribe anytime.</p>
+          <p class="notify-status" id="notify-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>

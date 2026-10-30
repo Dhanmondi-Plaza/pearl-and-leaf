@@ -4,7 +4,7 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",Arial,sans-serif;line-height:1.6}
 img{max-width:100%}
 a{color:inherit}
-a:focus-visible,select:focus-visible{outline:3px solid #ab7629;outline-offset:4px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ab7629;outline-offset:4px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .skip-link{position:absolute;left:-9999px;top:8px;z-index:10;background:#fff;padding:10px}
 .skip-link:focus{left:12px}
@@ -57,8 +57,16 @@ h2{font-size:clamp(2.7rem,4vw,4.2rem);margin:0 0 16px}
 .contact-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}
 .contact .eyebrow{color:#d7c492}
 .contact h2{max-width:650px}
-.contact p:last-child{margin:0;color:#d9e4d8}
+.contact-inner>div>p:last-child{margin:0;color:#d9e4d8}
 .light{background:#fff;color:var(--green);flex:none}
+.notify-form{width:min(100%,440px)}
+.notify-form label{display:block;margin-bottom:7px;font-size:13px;font-weight:600}
+.notify-fields{display:flex;gap:9px}
+.notify-fields input{min-width:0;flex:1;min-height:48px;border:1px solid #c9d2c3;border-radius:4px;padding:10px 13px;background:#fff;color:var(--ink);font:inherit}
+.notify-fields button{border:0;cursor:pointer;white-space:nowrap}
+.notify-fields button:disabled{opacity:.65;cursor:wait;transform:none}
+.contact .notify-consent,.contact .notify-status{margin:10px 0 0;color:#d9e4d8;font-size:12px;line-height:1.5}
+.contact .notify-status:empty{display:none}
 footer{background:#10221c;color:#e9eee6}
 .footer-inner{display:flex;align-items:center;gap:30px;padding-top:27px;padding-bottom:27px;font-size:13px}
 .footer-inner>span{font-family:"Cormorant Garamond",Georgia,serif;font-size:25px}
@@ -100,7 +108,9 @@ html[lang=bn] h2{font-size:clamp(2rem,3vw,3rem)}
   .offer-list li{padding:14px 0;font-size:16px}
   .contact{padding:45px 0}
   .contact-inner{display:block}
-  .contact .button{margin-top:23px}
+  .notify-form{margin-top:23px}
+  .notify-fields{flex-direction:column}
+  .contact .notify-fields button{margin-top:0}
   .footer-inner{display:block}
   .footer-inner>div{margin:12px 0;flex-wrap:wrap}
 }

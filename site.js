@@ -10,7 +10,7 @@ const translations = {
     eyebrow: 'নতুন চা ও ক্যাফের অভিজ্ঞতা · জামাইকা, কুইন্স',
     headline: 'ভালো পানীয়।<br><em>একটু উজ্জ্বল বিরতি।</em>',
     intro: 'DM Plaza-তে Pearl & Leaf গড়ে উঠছে। আশপাশের স্বাদ ও মানুষের অনুপ্রেরণায় পানীয় ও খাবার তৈরি করছি। চূড়ান্ত মেনু, দল এবং খোলার তারিখ এখনও নিশ্চিত হয়নি।',
-    contact: 'খোলার খবর জানতে ইমেইল করুন ↗',
+    contact: 'খোলার খবর পান ↓',
     explore: 'আমাদের পরিকল্পনা দেখুন ↓',
     note: 'DM Plaza-তে আসছে। খোলার তারিখ বা চূড়ান্ত মেনু এখনও ঘোষণা করা হয়নি।',
     concept: 'ধারণামূলক ছবি — নিশ্চিত মেনু আইটেম বা সম্পূর্ণ ক্যাফে নয়।',
@@ -27,8 +27,10 @@ const translations = {
     careersLink: 'DM Plaza-তে চাকরির সুযোগ দেখুন ↗',
     stayEyebrow: 'খবর রাখুন',
     stayTitle: 'পরের খবর জানতে চান?',
-    stayBody: 'জামাইকা, কুইন্সে Pearl & Leaf গড়ে ওঠার খবর জানতে আমাদের ইমেইল করুন।',
-    emailUs: 'ইমেইল করুন ↗',
+    stayBody: 'জামাইকা, কুইন্সে Pearl & Leaf গড়ে ওঠার খবর ইমেইলে পেতে নাম লিখুন।',
+    emailLabel: 'ইমেইল ঠিকানা',
+    emailUs: 'আমাকে জানান',
+    notifyConsent: 'আমাকে জানান নির্বাচন করে আপনি Pearl & Leaf খোলার খবর ইমেইলে পেতে সম্মতি দিচ্ছেন। যেকোনো সময় সদস্যতা বাতিল করতে পারবেন।',
     visitFooter: 'DM Plaza',
     privacy: 'গোপনীয়তা',
     footerContact: 'যোগাযোগ'
@@ -44,7 +46,7 @@ const translations = {
     eyebrow: 'Una nueva experiencia de té y café · Jamaica, Queens',
     headline: 'Una mejor bebida.<br><em>Una pausa más alegre.</em>',
     intro: 'Pearl & Leaf está tomando forma en DM Plaza. Desarrollamos bebidas y delicias inspiradas en los sabores y las comunidades de nuestro entorno. El menú final, el equipo y la fecha de apertura aún no están confirmados.',
-    contact: 'Pregunta por novedades de apertura ↗',
+    contact: 'Recibe novedades de apertura ↓',
     explore: 'Explora nuestros planes ↓',
     note: 'Próximamente en DM Plaza. Aún no se han anunciado la fecha de apertura ni el menú final.',
     concept: 'Imagen conceptual: no representa un producto confirmado ni el café terminado.',
@@ -61,8 +63,10 @@ const translations = {
     careersLink: 'Explora empleos en DM Plaza ↗',
     stayEyebrow: 'Mantente al tanto',
     stayTitle: '¿Quieres saber qué viene?',
-    stayBody: 'Escríbenos para conocer las novedades de Pearl & Leaf en Jamaica, Queens.',
-    emailUs: 'Escríbenos ↗',
+    stayBody: 'Inscríbete para recibir por correo las novedades de Pearl & Leaf en Jamaica, Queens.',
+    emailLabel: 'Correo electrónico',
+    emailUs: 'Avísame',
+    notifyConsent: 'Al seleccionar Avísame, aceptas recibir correos sobre la apertura de Pearl & Leaf. Puedes darte de baja en cualquier momento.',
     visitFooter: 'DM Plaza',
     privacy: 'Privacidad',
     footerContact: 'Contacto'
@@ -78,7 +82,7 @@ const translations = {
     eyebrow: '全新茶饮与咖啡体验 · 皇后区牙买加',
     headline: '好饮品。<br><em>让片刻更明亮。</em>',
     intro: 'Pearl & Leaf 正在 DM Plaza 筹备。我们从周边社区和风味中汲取灵感，开发饮品与小食。最终菜单、团队和开业日期尚未确定。',
-    contact: '邮件咨询开业消息 ↗',
+    contact: '获取开业消息 ↓',
     explore: '了解我们的计划 ↓',
     note: '即将来到 DM Plaza。开业日期和最终菜单尚未公布。',
     concept: '概念图片，并非已确定的菜单产品或完工后的咖啡店。',
@@ -95,8 +99,10 @@ const translations = {
     careersLink: '查看 DM Plaza 招聘职位 ↗',
     stayEyebrow: '关注进展',
     stayTitle: '想知道接下来有什么？',
-    stayBody: '欢迎通过邮件咨询 Pearl & Leaf 在皇后区牙买加的筹备进展。',
-    emailUs: '发送邮件 ↗',
+    stayBody: '订阅邮件，了解 Pearl & Leaf 在皇后区牙买加的筹备进展。',
+    emailLabel: '电子邮箱',
+    emailUs: '通知我',
+    notifyConsent: '点击“通知我”即表示你同意接收 Pearl & Leaf 的开业邮件。你可以随时取消订阅。',
     visitFooter: 'DM Plaza',
     privacy: '隐私',
     footerContact: '联系'
@@ -105,6 +111,20 @@ const translations = {
 
 const selector = document.getElementById('language');
 const supported = ['en', 'bn', 'es', 'zh-CN'];
+const notifyMessages = {
+  en: {sending: 'Sending…', success: 'Thanks! You are on the opening updates list.', error: 'We could not save your signup. Please try again.'},
+  bn: {sending: 'পাঠানো হচ্ছে…', success: 'ধন্যবাদ! আপনি খোলার খবরের তালিকায় আছেন।', error: 'নাম সংরক্ষণ করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।'},
+  es: {sending: 'Enviando…', success: '¡Gracias! Ya estás en la lista de novedades de apertura.', error: 'No pudimos guardar tu suscripción. Inténtalo de nuevo.'},
+  'zh-CN': {sending: '正在发送…', success: '谢谢！你已加入开业消息订阅名单。', error: '无法保存订阅，请重试。'}
+};
+const notifyForm = document.getElementById('notify-form');
+const notifyStatus = document.getElementById('notify-status');
+const notifyButton = notifyForm.querySelector('button[type="submit"]');
+let notifyState = '';
+function showNotifyState(state) {
+  notifyState = state;
+  notifyStatus.textContent = state ? notifyMessages[selector.value][state] : '';
+}
 const params = new URLSearchParams(location.search);
 let saved;
 try { saved = localStorage.getItem('pearl-leaf-language'); } catch {}
@@ -131,6 +151,7 @@ function setLanguage(language) {
     });
   }
   try { localStorage.setItem('pearl-leaf-language', language); } catch {}
+  if (notifyState) showNotifyState(notifyState);
 }
 
 setLanguage.english = Object.fromEntries(
@@ -146,4 +167,27 @@ selector.addEventListener('change', () => {
   if (selector.value === 'en') url.searchParams.delete('lang');
   else url.searchParams.set('lang', selector.value);
   history.replaceState(null, '', url);
+});
+
+notifyForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  if (notifyButton.disabled || !notifyForm.reportValidity()) return;
+  notifyButton.disabled = true;
+  notifyButton.textContent = notifyMessages[selector.value].sending;
+  showNotifyState('');
+  try {
+    const response = await fetch('/api/lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: document.getElementById('pl-email').value.trim()})
+    });
+    if (!response.ok) throw new Error('DELIVERY_FAILED');
+    notifyForm.reset();
+    showNotifyState('success');
+  } catch {
+    showNotifyState('error');
+  } finally {
+    notifyButton.disabled = false;
+    notifyButton.textContent = selector.value === 'en' ? setLanguage.english.emailUs : translations[selector.value].emailUs;
+  }
 });
